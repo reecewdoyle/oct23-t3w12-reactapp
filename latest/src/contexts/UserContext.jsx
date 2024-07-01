@@ -26,13 +26,13 @@ export default function UserProvider({children}){
 
 	const makeSignupRequest = async (username, password) => {
 		let bodyData = {username, password};
-		console.log("Body data to send is:");
+		console.log("Body data to send is: ");
 		console.log(bodyData);
 		let signUpResult = await fetch("http://localhost:3000/users/", {
 			method: "POST",
 			body: JSON.stringify(bodyData),
 			headers: {
-				'Content-type': 'application/json'
+				'Content-Type': 'application/json'
 			}
 		}).catch(error => console.error(error));
 
